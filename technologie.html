@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologie et innovations - Voitures de Luxe</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Technologie et innovations</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="marques.html">Marques emblématiques</a></li>
+                <li><a href="modeles.html">Modèles légendaires</a></li>
+                <li><a href="technologie.html">Technologie et innovations</a></li>
+                <li><a href="galerie.html">Galerie de photos</a></li>
+                <li><a href="actualites.html">Actualités et événements</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Technologie et innovations</h2>
+            <p>Restez à jour avec les dernières avancées technologiques dans le domaine des voitures de luxe. Découvrez comment l'innovation façonne l'avenir de l'automobile.</p>
+            <canvas id="techChart" width="400" height="200"></canvas>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const ctx = document.getElementById('techChart').getContext('2d');
+                    const techChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
+                            datasets: [{
+                                label: 'Progrès technologiques',
+                                data: [0, 20, 40, 60, 80, 100],
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+            <h3>Technologie et innovations</h3>
+            <p>Restez à jour avec les dernières avancées technologiques dans le domaine des voitures de luxe. Découvrez comment l'innovation façonne l'avenir de l'automobile.</p>
+            <h3>Technologies de moteur</h3>
+            <p>Les constructeurs de voitures de luxe investissent massivement dans le développement de moteurs plus puissants et plus efficaces. Par exemple, les moteurs hybrides et électriques de dernière génération permettent des performances époustouflantes tout en réduisant l'empreinte carbone.</p>
+            <h3>Technologies de conduite autonome</h3>
+            <p>Les voitures de luxe sont souvent à la pointe de la technologie en matière de conduite autonome. Les systèmes avancés d'assistance à la conduite, comme le pilotage automatique et les fonctionnalités de stationnement autonome, rendent la conduite plus sûre et plus agréable.</p>
+            <h3>Matériaux innovants</h3>
+            <p>Les constructeurs de voitures de luxe utilisent des matériaux innovants et légers, comme la fibre de carbone et l'aluminium, pour améliorer les performances et l'efficacité énergétique des véhicules. Ces matériaux offrent également un design raffiné et une durabilité accrue.</p>
+            <p>Explorez ces innovations technologiques et bien d'autres pour découvrir comment elles transforment l'expérience de conduite des voitures de luxe.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Voitures de Luxe. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marques emblématiques - Voitures de Luxe</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Marques emblématiques</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="marques.html">Marques emblématiques</a></li>
+                <li><a href="modeles.html">Modèles légendaires</a></li>
+                <li><a href="technologie.html">Technologie et innovations</a></li>
+                <li><a href="galerie.html">Galerie de photos</a></li>
+                <li><a href="actualites.html">Actualités et événements</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Les grandes marques de voitures de luxe</h2>
+            <div>
+                <ul class="tabs">
+                    <li class="tab-link active" data-tab="tab-1">Ferrari</li>
+                    <li class="tab-link" data-tab="tab-2">Lamborghini</li>
+                    <li class="tab-link" data-tab="tab-3">Rolls-Royce</li>
+                </ul>
+                <div id="tab-1" class="tab-content active">
+                    <h3>Ferrari</h3>
+                    <p>Fondée en 1939 par Enzo Ferrari, Ferrari est synonyme de performance et d'élégance. La marque italienne est célèbre pour ses voitures de sport puissantes et luxueuses.</p>
+                </div>
+                <div id="tab-2" class="tab-content">
+                    <h3>Lamborghini</h3>
+                    <p>Depuis sa création en 1963, Lamborghini a révolutionné le monde des voitures de sport avec des designs audacieux et des moteurs puissants. La marque est connue pour son style extravagant et ses performances impressionnantes.</p>
+                </div>
+                <div id="tab-3" class="tab-content">
+                    <h3>Rolls-Royce</h3>
+                    <p>Symbole ultime du luxe, Rolls-Royce produit des voitures raffinées et extrêmement confortables depuis 1904. Chaque modèle est un chef-d'œuvre de design et d'ingénierie.</p>
+                </div>
+                <p>Explorez ces marques et bien d'autres pour en savoir plus sur ce qui les rend uniques et admirées dans le monde entier.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Voitures de Luxe. Tous droits réservés.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let tabs = document.querySelectorAll('.tab-link');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    let currentTab = document.querySelector('.tab-link.active');
+                    let currentContent = document.querySelector('.tab-content.active');
+                    
+                    currentTab.classList.remove('active');
+                    currentContent.classList.remove('active');
+                    
+                    let newContent = document.getElementById(tab.getAttribute('data-tab'));
+                    
+                    tab.classList.add('active');
+                    newContent.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

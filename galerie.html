@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie de photos - Voitures de Luxe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Galerie de photos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="marques.html">Marques emblématiques</a></li>
+                <li><a href="modeles.html">Modèles légendaires</a></li>
+                <li><a href="technologie.html">Technologie et innovations</a></li>
+                <li><a href="galerie.html">Galerie de photos</a></li>
+                <li><a href="actualites.html">Actualités et événements</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Galerie de photos</h2>
+            <p>Découvrez une collection de photos impressionnantes de voitures de luxe. Admirez ces chefs-d'œuvre de design automobile sous différents angles.</p>
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="car1.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="car2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="car3.jpg" style="width:100%">
+                </div>
+                <!-- Ajoute plus de slides ici -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Voitures de Luxe. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let slides = document.getElementsByClassName("mySlides");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}
+                slides[slideIndex-1].style.display = "block";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+        });
+    </script>
+</body>
+</html>

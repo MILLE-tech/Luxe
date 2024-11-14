@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modèles légendaires - Voitures de Luxe</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+        }
+        .carousel-slide img {
+            min-width: 100%;
+            border-radius: 10px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Modèles légendaires</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="marques.html">Marques emblématiques</a></li>
+                <li><a href="modeles.html">Modèles légendaires</a></li>
+                <li><a href="technologie.html">Technologie et innovations</a></li>
+                <li><a href="galerie.html">Galerie de photos</a></li>
+                <li><a href="actualites.html">Actualités et événements</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Les modèles les plus emblématiques</h2>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="ferrari.jpg" alt="Ferrari LaFerrari">
+                    <img src="lamborghini.jpg" alt="Lamborghini Aventador">
+                    <img src="rollsroyce.jpg" alt="Rolls-Royce Phantom">
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <p>Plongez dans l'histoire des modèles de voitures de luxe les plus emblématiques. Découvrez ce qui rend chaque modèle unique et désirable.</p>
+            <h3>Ferrari LaFerrari</h3>
+            <p>LaFerrari est une hypercar hybride qui allie design futuriste et technologies de pointe. Lancée en 2013, elle incarne le summum de la performance et de l'innovation de Ferrari.</p>
+            <h3>Lamborghini Aventador</h3>
+            <p>L'Aventador est une supercar célèbre pour son design agressif et son moteur V12 puissant. Depuis sa sortie en 2011, elle est devenue une icône de la marque Lamborghini.</p>
+            <h3>Rolls-Royce Phantom</h3>
+            <p>La Rolls-Royce Phantom est l'expression ultime du luxe et du confort. Chaque détail est soigneusement conçu pour offrir une expérience de conduite inégalée.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Voitures de Luxe. Tous droits réservés.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slides = document.querySelectorAll('.carousel-slide img');
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
+            let counter = 0;
+            const size = slides[0].clientWidth;
+
+            document.querySelector('.carousel-slide').style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+            next.addEventListener('click', () => {
+                if (counter >= slides.length - 1) return;
+                document.querySelector('.carousel-slide').style.transition = 'transform 0.4s ease-in-out';
+                counter++;
+                document.querySelector('.carousel-slide').style.transform = 'translateX(' + (-size * counter) + 'px)';
+            });
+
+            prev.addEventListener('click', () => {
+                if (counter <= 0) return;
+                document.querySelector('.carousel-slide').style.transition = 'transform 0.4s ease-in-out';
+                counter--;
+                document.querySelector('.carousel-slide').style.transform = 'translateX(' + (-size * counter) + 'px)';
+            });
+        });
+    </script>
+</body>
+</html>
