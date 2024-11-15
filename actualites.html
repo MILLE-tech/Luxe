@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualités et événements - Voitures de Luxe</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .news-feed {
+            max-width: 800px;
+            margin: auto;
+            background: #2e2e2e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .news-feed h3 {
+            color: #c0c0c0;
+        }
+        .news-feed p {
+            color: #aaa;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const rssFeed = "https://www.example.com/rss"; // Remplace par l'URL de ton flux RSS
+            fetch(rssFeed)
+                .then(response => response.text())
+                .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                .then(data => {
+                    const items = data.querySelectorAll("item");
+                    let html = "";
+                    items.forEach(el => {
+                        html += `
+                            <article>
+                                <h3>${el.querySelector("title").innerHTML}</h3>
+                                <p>${el.querySelector("description").innerHTML}</p>
+                                <a href="${el.querySelector("link").innerHTML}" target="_blank">Lire plus</a>
+                            </article>
+                        `;
+                    });
+                    document.querySelector(".news-feed").innerHTML = html;
+                });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -24,12 +61,9 @@
         <section>
             <h2>Actualités et événements</h2>
             <p>Tenez-vous informé des dernières nouvelles et événements dans le monde des voitures de luxe. Ne manquez rien des salons automobiles et des annonces importantes.</p>
-            <h3>Dernières nouvelles</h3>
-            <p>Restez à jour avec les derniers développements de l'industrie des voitures de luxe, y compris les lancements de nouveaux modèles, les innovations technologiques et les tendances du marché.</p>
-            <h3>Événements à venir</h3>
-            <p>Ne manquez pas les salons automobiles et les événements exclusifs dédiés aux voitures de luxe. Découvrez les dates et lieux des prochains événements majeurs.</p>
-            <h3>Couverture d'événements</h3>
-            <p>Retrouvez des reportages et des résumés d'événements passés, avec des photos et des vidéos exclusives des dernières éditions des salons et expositions.</p>
+            <div class="news-feed">
+                <!-- Les articles seront injectés ici par JavaScript -->
+            </div>
         </section>
     </main>
     <footer>
